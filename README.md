@@ -25,7 +25,7 @@ A maneira mais simples de usar o Livraria é através do [XAMPP](https://www.apa
 
 1. Certifique-se de estar com o Apache e MySQL rodando no XAMPP
 2. Crie um banco de dados chamado `editora` no [phpMyAdmin](http://localhost/phpmyadmin)
-3. Navegue até o arquivo [`./docs/editora.sql`](./docs/editora.sql) e execute o SQL no phpMyAdmin
+3. Navegue até o arquivo [`./docs/editora.sql`](./docs/editora.sql) copie e execute o SQL no phpMyAdmin
 
 ## Rodando o projeto
 
