@@ -1,22 +1,27 @@
-# SOAP pattern php
+# SOAP php
 
 Um sistema de livraria desenvolvido em PHP utilizando a biblioteca SOAP
 
-SOAP (Simple Object Access Protocol) é um protocolo de comunicação baseado em XML usado para a troca de informações estruturadas entre sistemas operacionais diferentes via HTTP e XML.
+SOAP (Simple Object Access Protocol) é um protocolo de comunicação baseado em
+XML usado para a troca de informações estruturadas entre sistemas operacionais
+diferentes via HTTP e XML.
 
 ## Requisitos
 
-A maneira mais simples de usar o Livraria é através do [XAMPP](https://www.apachefriends.org/download.html).
+A maneira mais simples de usar o Livraria é através do
+[XAMPP](https://www.apachefriends.org/download.html).
 
 ## Instalação
 
 ### Habilite o SOAP no XAMPP
 
-1. Abra a pasta de instalação do XAMPP, que normalmente é C:\xampp por padrão, mas pode variar dependendo da sua configuração.
+1. Abra a pasta de instalação do XAMPP, que normalmente é C:\xampp por padrão,
+   mas pode variar dependendo da sua configuração.
 2. Navegue até a pasta php dentro da pasta do XAMPP.
 3. Procure o arquivo php.ini. Isso é o arquivo de configuração do PHP.
 4. Abra o arquivo php.ini em um editor de texto de sua preferência.
-5. Busque pela linha que contém `;extension=soap`, que é a extensão SOAP desativada por padrão.
+5. Busque pela linha que contém `;extension=soap`, que é a extensão SOAP
+   desativada por padrão.
 6. Remova o ponto e vírgula no início da linha para habilitar a extensão SOAP. Deve ficar assim: `phpextension=soap`
 7. Salve e feche o arquivo php.ini após fazer essa alteração.
 8. Reinicie o servidor Apache do XAMPP para aplicar as alterações.
