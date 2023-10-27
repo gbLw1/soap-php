@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:tns="http://localhost/SoapService/editora/services/editoraSOAP.class.php" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/SoapService/editora/services/editoraSOAP.class.php">
+
+<types>
+<xsd:schema targetNamespace="http://localhost/SoapService/editora/services/editoraSOAP.class.php">
+
+<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+<xsd:complexType name="dadosSecType">
+<xsd:sequence>
+	<xsd:element name="username" type="xsd:string"/>
+	<xsd:element name="password" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="security" type="tns:dadosSecType"/>
+</xsd:schema>
+</types>
+
+<message name="security">
+	<part name="sec" element="tns:security"/>
+</message>
+
+
+<message name="buscar_catalogoRequest"/>
+<message name="buscar_catalogoResponse">
+	<part name="retorno" type="xsi:string"/>
+</message>
+
+
+<message name="buscar_livros_autorRequest">
+<part name="idautor" type="xsi:int"/>
+</message>
+<message name="buscar_livros_autorResponse">
+<part name="retorno" type="xsi:string"/>
+</message>
+
+<message name="buscar_livros_por_generoRequest">
+<part name="idgenero" type="xsi:int"/>
+</message>
+<message name="buscar_livros_por_generoResponse">
+<part name="retorno" type="xsi:string"/>
+</message>
+
+
+<portType name="portType1">
+
+	<operation name="buscar_catalogo">
+	
+		<documentation>Busca o catálogo de livros da editora</documentation>
+		
+		<input message="buscar_catalogoRequest"/>
+		
+		<output message="buscar_catalogoResponse"/>
+	</operation>
+
+
+	<operation name="buscar_livros_autor">
+	
+		<documentation>Busca os livros da editora com base em um autor selecionado pelo usuário</documentation>
+		
+		<input message="buscar_livros_autorRequest"/>
+		
+		<output message="buscar_livros_autorResponse"/>
+	</operation>
+
+	<operation name="buscar_livros_por_genero">
+	
+		<documentation>Busca o catálogo de livros da editora com base no genero selecionado pelo usuário</documentation>
+		
+		<input message="buscar_livros_por_generoRequest"/>
+		
+		<output message="buscar_livros_por_generoResponse"/>
+	</operation>
+</portType>
+
+
+
+<binding name="binding1" type="tns:portType1">
+
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	
+	<operation name="buscar_catalogo">
+		<soap:operation soapAction="http://localhost/SoapService/editora/services/editoraSOAP.class.php/buscar_catalogo" style="rpc"/>
+		<input>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+			
+		</input>
+		
+		<output>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+		</output>
+		
+	</operation>
+	
+	<operation name="buscar_livros_autor">
+		<soap:operation soapAction="http://localhost/SoapService/editora/services/editoraSOAP.class.php/buscar_livros_autor" style="rpc"/>
+		<input>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+			
+			<soap:header use="literal" message="tns:security" namespace="editora" part="sec"/>
+		</input>
+		
+		<output>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+		</output>
+		
+	</operation>
+
+	<operation name="buscar_livros_por_genero">
+		<soap:operation soapAction="http://localhost/SoapService/editora/services/editoraSOAP.class.php/buscar_livros_por_genero" style="rpc"/>
+		<input>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+			
+		</input>
+		
+		<output>
+			<soap:body use="encode" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="editora"/>
+		</output>
+		
+	</operation>
+	
+</binding>
+
+<service name="editoraSOAP">
+	<port name="tns:portType1" binding="tns:binding1">
+		<soap:address location="http://localhost/SoapService/editora/services/editoraSOAP.class.php"/>
+	</port>
+</service>
+</definitions>

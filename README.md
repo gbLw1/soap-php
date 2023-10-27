@@ -1,6 +1,6 @@
-# Livraria
+# SOAP pattern php
 
-Um sistema de biblioteca desenvolvido em PHP utilizando a biblioteca SOAP
+Um sistema de livraria desenvolvido em PHP utilizando a biblioteca SOAP
 
 SOAP (Simple Object Access Protocol) é um protocolo de comunicação baseado em XML usado para a troca de informações estruturadas entre sistemas operacionais diferentes via HTTP e XML.
 
@@ -29,6 +29,5 @@ A maneira mais simples de usar o Livraria é através do [XAMPP](https://www.apa
 
 ## Rodando o projeto
 
-1. Copie a pasta `src` do projeto clonado para a pasta `htdocs` dentro da pasta do XAMPP
-2. Altere a variável `$envBasePath` do arquivo [`config.php`](./src/config.php) para o endereço correto que seu projeto se encontra
-3. Abra o navegador e acesse o projeto em: `{$envBasePath}/livraria`
+1. Copie os arquivos da pasta `src` para a pasta `C:/xamp/htdocs/SoapService`
+2. Abra o navegador e acesse o projeto em: `localhost/SoapService/livraria`
