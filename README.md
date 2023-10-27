@@ -1,12 +1,13 @@
-# SOAP php
+# SOAP PHP
 
-Um sistema de livraria desenvolvido em PHP utilizando a biblioteca SOAP
+Um sistema de livraria desenvolvido em PHP com SOAP e WSDL.
 
 SOAP (Simple Object Access Protocol) é um protocolo de comunicação baseado em
 XML usado para a troca de informações estruturadas entre sistemas operacionais
 diferentes via HTTP e XML.
 
-## Requisitos
+WSDL (Web Services Description Language) é uma linguagem baseada em XML para
+descrever serviços web e como acessá-los.
 
 A maneira mais simples de usar o Livraria é através do
 [XAMPP](https://www.apachefriends.org/download.html).
