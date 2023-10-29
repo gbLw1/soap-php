@@ -9,10 +9,10 @@ diferentes via HTTP e XML.
 WSDL (Web Services Description Language) é uma linguagem baseada em XML para
 descrever serviços web e como acessá-los.
 
+## Instalação
+
 A maneira mais simples de usar o Livraria é através do
 [XAMPP](https://www.apachefriends.org/download.html).
-
-## Instalação
 
 ### Habilite o SOAP no XAMPP
 
