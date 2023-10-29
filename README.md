@@ -11,7 +11,7 @@ descrever serviços web e como acessá-los.
 
 ## Instalação
 
-A maneira mais simples de usar o Livraria é através do
+A maneira mais simples de rodar o projeto é através do
 [XAMPP](https://www.apachefriends.org/download.html).
 
 ### Habilite o SOAP no XAMPP
