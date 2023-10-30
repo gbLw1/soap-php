@@ -37,4 +37,7 @@ class autorDAO extends Conexao
 		}
 	}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73f398c (style: fix indenting)
