@@ -23,7 +23,7 @@ A maneira mais simples de rodar o projeto é através do
 4. Abra o arquivo php.ini em um editor de texto de sua preferência.
 5. Busque pela linha que contém `;extension=soap`, que é a extensão SOAP
    desativada por padrão.
-6. Remova o ponto e vírgula no início da linha para habilitar a extensão SOAP. Deve ficar assim: `phpextension=soap`
+6. Remova o ponto e vírgula no início da linha para habilitar a extensão SOAP. Deve ficar assim: `extension=soap`
 7. Salve e feche o arquivo php.ini após fazer essa alteração.
 8. Reinicie o servidor Apache do XAMPP para aplicar as alterações.
 
