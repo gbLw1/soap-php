@@ -13,11 +13,26 @@ class livroDAO extends conexao
 		try {
 			$stm = $this->db->prepare($sql);
 			$stm->execute();
-			$this->db = null;
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (PDOException $e) {
-			$this->db = null;
 			return "Problema ao buscar catalogo de livros";
+		} finally {
+			$this->db = null;
+		}
+	}
+
+	public function buscar_por_ano($livro) {
+		$sql = "SELECT * FROM livro WHERE ano = ?";
+		try {
+			$stm = $this->db->prepare($sql);
+			$stm->bindValue(1, $livro->getAno());
+			$stm->execute();
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (PDOException $e) {
+			return "Problema ao buscar livros por ano";
+		}
+		finally {
+			$this->db = null;
 		}
 	}
 }

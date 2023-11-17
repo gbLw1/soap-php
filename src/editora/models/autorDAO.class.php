@@ -36,4 +36,22 @@ class autorDAO extends Conexao
 			return "Problema ao buscar os autores";
 		}
 	}
+
+	public function buscar_livros_por_autor($autor)
+	{
+		// $sql = "SELECT l.* from livro as l, autor as a , livro_autor as la
+		//     WHERE a.idautor = la.idautor AND l.idlivro = la.idlivro AND a.nome = ? ";
+		
+		$sql = "SELECT * FROM livro WHERE idlivro IN (SELECT idlivro FROM livro_autor WHERE idautor IN (SELECT idautor FROM autor WHERE nome = ?))";
+		try {
+			$stm = $this->db->prepare($sql);
+			$stm->bindValue(1, $autor->getNome());
+			$stm->execute();
+			$this->db = null;
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (PDOException $e) {
+			$this->db = null;
+			return "Problema ao buscar os livros do autor";
+		}
+	}
 }
